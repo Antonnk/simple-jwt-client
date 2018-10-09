@@ -6,6 +6,7 @@
 
 <script>
 	import axios from 'axios';
+	import Routes from '../Routes'
 
 	export default {
 		methods: {
@@ -20,7 +21,7 @@
 
 				axios({
 					method: 'post',
-					url: 'http://user-manager.test/api/auth/logout',
+					url: Routes.logout,
 					headers: {
 					  'Content-Type': 'application/json',
 					  'Authorization': `Bearer ${jwt.access_token}`

@@ -14,6 +14,7 @@
 	import Logout from './Logout.vue';
 	import User from './User.vue';
 	import axios from 'axios';
+	import Routes from '../Routes'
 
 	export default {
 		data() {
@@ -38,7 +39,7 @@
 			getMe(token) {
 				return axios({
 					method: 'post',
-					url: 'http://user-manager.test/api/auth/me',
+					url: Routes.me,
 					headers: {
 					  'Content-Type': 'application/json',
 					  'Authorization': `Bearer ${token.access_token}`

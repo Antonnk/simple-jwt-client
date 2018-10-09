@@ -1648,6 +1648,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__User_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__User_vue__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_axios__ = __webpack_require__("./node_modules/axios/index.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_axios__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__Routes__ = __webpack_require__("./source/_assets/js/Routes.js");
 
 
 function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, arguments); return new Promise(function (resolve, reject) { function step(key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { return Promise.resolve(value).then(function (value) { step("next", value); }, function (err) { step("throw", err); }); } } return step("next"); }); }; }
@@ -1663,6 +1664,7 @@ function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, a
 //
 //
 //
+
 
 
 
@@ -1716,7 +1718,7 @@ function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, a
 		getMe: function getMe(token) {
 			return __WEBPACK_IMPORTED_MODULE_4_axios___default()({
 				method: 'post',
-				url: 'http://user-manager.test/api/auth/me',
+				url: __WEBPACK_IMPORTED_MODULE_5__Routes__["a" /* default */].me,
 				headers: {
 					'Content-Type': 'application/json',
 					'Authorization': 'Bearer ' + token.access_token
@@ -1791,6 +1793,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_axios__ = __webpack_require__("./node_modules/axios/index.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_axios__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Routes__ = __webpack_require__("./source/_assets/js/Routes.js");
 
 
 function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, arguments); return new Promise(function (resolve, reject) { function step(key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { return Promise.resolve(value).then(function (value) { step("next", value); }, function (err) { step("throw", err); }); } } return step("next"); }); }; }
@@ -1803,6 +1806,7 @@ function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, a
 //
 //
 //
+
 
 
 
@@ -1824,7 +1828,7 @@ function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, a
 							case 0:
 								_context.prev = 0;
 								_context.next = 3;
-								return __WEBPACK_IMPORTED_MODULE_1_axios___default.a.post('http://user-manager.test/api/auth/login', {
+								return __WEBPACK_IMPORTED_MODULE_1_axios___default.a.post(__WEBPACK_IMPORTED_MODULE_2__Routes__["a" /* default */].login, {
 									email: this.email,
 									password: this.password
 								});
@@ -1871,6 +1875,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_axios__ = __webpack_require__("./node_modules/axios/index.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_axios__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Routes__ = __webpack_require__("./source/_assets/js/Routes.js");
 
 
 function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, arguments); return new Promise(function (resolve, reject) { function step(key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { return Promise.resolve(value).then(function (value) { step("next", value); }, function (err) { step("throw", err); }); } } return step("next"); }); }; }
@@ -1881,6 +1886,7 @@ function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, a
 //
 //
 //
+
 
 
 
@@ -1910,7 +1916,7 @@ function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, a
 
 								__WEBPACK_IMPORTED_MODULE_1_axios___default()({
 									method: 'post',
-									url: 'http://user-manager.test/api/auth/logout',
+									url: __WEBPACK_IMPORTED_MODULE_2__Routes__["a" /* default */].logout,
 									headers: {
 										'Content-Type': 'application/json',
 										'Authorization': 'Bearer ' + jwt.access_token
@@ -14502,6 +14508,18 @@ try {
 
 module.exports = g;
 
+
+/***/ }),
+
+/***/ "./source/_assets/js/Routes.js":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony default export */ __webpack_exports__["a"] = ({
+	login: 'http://user-manager.test/api/auth/login',
+	logout: 'http://user-manager.test/api/auth/logout',
+	me: 'http://user-manager.test/api/auth/me'
+});
 
 /***/ }),
 
