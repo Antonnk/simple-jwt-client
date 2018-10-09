@@ -8,6 +8,7 @@
 
 <script>
 	import axios from 'axios';
+	import Routes from '../Routes'
 
 	export default {
 		data() {
@@ -19,7 +20,7 @@
 		methods: {
 			async SendLoginRequest(e) {
 				try {
-					const res = await axios.post('http://user-manager.test/api/auth/login', {
+					const res = await axios.post(Routes.login, {
 						email: this.email,
 						password: this.password,
 					})
