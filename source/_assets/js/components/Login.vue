@@ -20,9 +20,16 @@
 		methods: {
 			async SendLoginRequest(e) {
 				try {
-					const res = await axios.post(Routes.login, {
-						email: this.email,
-						password: this.password,
+					const res = await axios({
+						method: 'post',
+						url : Routes.login,
+						headers: {
+						  'Content-Type': 'application/json',
+						},
+						data: {
+							email: this.email,
+							password: this.password,
+						}
 					})
 					
 					this.$eventBus.$emit('login.success', res.data)
