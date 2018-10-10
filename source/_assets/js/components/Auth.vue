@@ -32,7 +32,7 @@
 					console.error('something vent wrong')
 				}
 				
-				localStorage.setItem('jwt', JSON.stringify(token))
+				this.$cookie.set('jwt', JSON.stringify(token), { SameSite:'strict', expires: token.expires_in+'s' })
 				this.loading = false
 
 			},
@@ -50,14 +50,14 @@
 			},
 			logout() {
 				this.user = false
-				localStorage.removeItem('jwt')
+				this.$cookie.delete('jwt')
 			}
 		},
 		async created() {
 			this.$eventBus.$on('login.success', this.storeToken)
 			this.$eventBus.$on('logout.success', this.logout)
 
-			const jwt = localStorage.getItem('jwt')
+			const jwt = this.$cookie.get('jwt')
 			if(jwt) {
 				this.user = await this.getMe(JSON.parse(jwt))
 			}

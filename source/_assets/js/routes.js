@@ -1,5 +1,5 @@
 export default {
-	login: 'http://user-manager.test/api/auth/login',
-	logout: 'http://user-manager.test/api/auth/logout',
-	me: 'http://user-manager.test/api/auth/me'
+	login: '//user-manager.test/api/auth/login',
+	logout: '//user-manager.test/api/auth/logout',
+	me: '//user-manager.test/api/auth/me'
 }

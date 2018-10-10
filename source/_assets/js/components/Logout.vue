@@ -11,7 +11,7 @@
 	export default {
 		methods: {
 			async SendLogoutRequest(e) {
-				let jwt = localStorage.getItem('jwt')
+				let jwt = this.$cookie.get('jwt')
 				
 				if(!jwt) {
 					return console.error('something went wrong')
